@@ -78,11 +78,19 @@ draft new ones here — `/process` does that per listing.
 
 ## 6. email-app (optional)
 
-Only if they want to send emails from the terminal. Walk them through
-`email-app/README.md` step by step: copy `.env.example` → `.env`, create
-an app password (Gmail) or SMTP creds, fill `.env` **themselves** (never
-ask them to paste a password into chat), then have them run the dry-run
-command and show you the output. Never run `--send` yourself.
+Only if they want to send emails from the terminal. Ask which mail
+they use, then walk them through that route in `email-app/README.md`
+step by step:
+- **Classic Outlook on Windows** → `SEND_VIA=outlook` (+ optional
+  `OUTLOOK_ACCOUNT`), no password. Check they're on classic, not new
+  Outlook. Mention `--draft` (drops into Outlook Drafts).
+- **Gmail** → 2-Step Verification, then App Password, then SMTP vars.
+- **Outlook.com / M365 without classic Outlook, or other** → SMTP vars;
+  warn that many school/work tenants block SMTP.
+Copy `.env.example` → `.env`; they fill secrets **themselves** (never
+ask them to paste a password into chat). Then have them run the dry run
+and the `--test --send` to themselves, and show you the output. Never
+run `--send` (to a real recipient) yourself.
 
 ## Finish
 

@@ -118,9 +118,11 @@ time.
 
 ## Sending email (optional)
 
-`email-app/send.py` sends an `emails/*.md` draft over SMTP (Gmail app
-password, Outlook, etc.). Dry-run by default, `--test` sends to
-yourself, `--send` asks you to type `send`. Steps in
+`email-app/send.py` sends an `emails/*.md` draft through **classic
+Outlook on Windows** (no password, uses the app you're signed into, can
+also drop drafts into Outlook's Drafts), **Gmail** (App Password), or any
+**SMTP** provider. Dry run by default, `--test --send` sends to yourself,
+`--send` asks you to type `send`. Step-by-step per provider in
 [`email-app/README.md`](email-app/README.md), or run `/setup email-app`.
 
 ## Layout
