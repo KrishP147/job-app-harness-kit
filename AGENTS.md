@@ -21,6 +21,11 @@ follow it exactly. Ignore its YAML frontmatter; `$ARGUMENTS` = whatever
 the user typed after the command name. Tool names in those files
 (Read, Write, Agent, ...) mean your equivalent.
 
+- **Your file search will miss the user's data.** `resume/`, `context/`,
+  `listings/`, `output/`, `dms/`, `emails/` are gitignored on purpose,
+  and ripgrep/glob-based search tools skip gitignored files. Always
+  list those folders directly (`ls context/`, `ls -a resume/`) and read
+  files by path. Never conclude "no resume/context" from a search.
 - **No subagents?** Do `/process` listings one at a time, yourself.
 - **No auto-compile hook?** (only Claude Code has it) After every write
   to a `.tex` under `resume/` or `output/`, run
