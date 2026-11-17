@@ -1,0 +1,4 @@
+description = "Draft cold emails (recruiters, founders, engineers, alumni) in your voice"
+prompt = """
+Read `.claude/commands/email.md` and follow it exactly, using the rules in `AGENTS.md`. Ignore its frontmatter. `$ARGUMENTS` means: {{args}}
+"""

@@ -23,19 +23,20 @@ Before launching subagents, create the marker file `output/.processing`
 compiling, since subagents compile explicitly. Delete it when all
 subagents are done, including on failure.
 
-For each target listing, launch one `Agent` subagent (general-purpose),
+If your tool can't spawn subagents, do each listing yourself, one at a
+time, following the same brief. Otherwise, for each target listing, launch one `Agent` subagent (general-purpose),
 running **up to 4 concurrently** (batch launches in groups of 4 if there
 are more). Give each subagent this brief, filled in per listing:
 
 > Read `resume/resume.tex` and every file under `context/` (all of it —
 > `.md`, `.txt`, `.pdf`). Read the listing at `<path to the listing .md
 > file>`. Follow the guardrails and answer rules in the repo's
-> `CLAUDE.md` (sections 9, 10, 12) exactly.
+> `AGENTS.md` (sections 9, 10, 12) exactly.
 >
 > Write:
 > - `output/<slug>.tex` — the tailored resume. **If** the listing has a
 >   `## Questions` section, put drafted answers at the very top of this
->   file as a `%` comment block (format in CLAUDE.md #10) so they stay
+>   file as a `%` comment block (format in AGENTS.md #10) so they stay
 >   out of the PDF. Mark anything you can't answer from `resume/` or
 >   `context/` with `[NEEDS INPUT: ...]` inline; never block on a gap.
 >   No separate answers file.

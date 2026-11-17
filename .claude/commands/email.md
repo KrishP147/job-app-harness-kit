@@ -8,7 +8,7 @@ The user pasted info about one or more email recipients (`$ARGUMENTS`
 or message body): name, address, role/company, what they work on,
 any shared connection, and the ask. Paste-only — never fetch URLs.
 
-Follow CLAUDE.md #15 (and #14's sourcing/voice/avoid rules). Steps:
+Follow AGENTS.md #15 (and #14's sourcing/voice/avoid rules). Steps:
 
 1. Read all of `context/` (esp. `profile.md` for sign-off, links,
    style) and `resume/resume.tex`. Read `listings/` + `listings/completed/`

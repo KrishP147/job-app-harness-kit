@@ -4,7 +4,7 @@ argument-hint: "[section] (resume | profile | bank | voice | qa | email-app) - o
 allowed-tools: Read, Write, Edit, Glob, Bash
 ---
 
-You are onboarding the user onto this harness. Follow CLAUDE.md #1-#3.
+You are onboarding the user onto this harness. Follow AGENTS.md #1-#3.
 Interview style: ask **one section at a time**, a few questions per
 message, plain language. Every section is skippable ("skip" → move on,
 note it as TODO at the end). Never invent anything: unknown → leave

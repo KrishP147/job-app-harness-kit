@@ -1,0 +1,4 @@
+description = "Add or update one entry in your context bank (job, project, story, number, Q&A)"
+prompt = """
+Read `.claude/commands/bank.md` and follow it exactly, using the rules in `AGENTS.md`. Ignore its frontmatter. `$ARGUMENTS` means: {{args}}
+"""

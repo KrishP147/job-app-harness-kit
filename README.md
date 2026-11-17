@@ -1,6 +1,6 @@
 # job-app-harness
 
-A Claude Code harness for job hunting: tailor your LaTeX resume per
+An AI harness for job hunting (Claude Code, Codex, Cursor, Gemini, Copilot, any chat website, or no AI): tailor your LaTeX resume per
 listing, draft application answers, cold DMs, and cold emails — all in
 your own voice, from your own facts. Runs locally; your data never
 enters git.
@@ -19,14 +19,21 @@ enters git.
 > these. **Personalized setup = effective output.** Spend the time
 > once; add to it with `/bank` whenever you ship something new.
 
-## Do I need an LLM?
+## Which AI do I need? (any, or none)
 
-Yes. The commands (`/setup`, `/process`, `/dm`, ...) are Claude Code
-slash commands, so you need [Claude Code](https://docs.claude.com/en/docs/claude-code)
-with a Claude subscription (Pro/Max) or an Anthropic API key. Claude
-does the interviewing, tailoring, and drafting. Two parts run without
-an LLM: the LaTeX compile scripts (`.claude/scripts/compile.*`,
-`watch.*`) and the email sender (`email-app/send.py`).
+Pick whichever you have. Same rules, same files, same output.
+
+| You have | How you use it |
+|---|---|
+| **Claude Code** (best: auto-compile hook, parallel `/process`) | run `claude` in the repo, type `/setup`, `/process`, ... |
+| **Codex CLI, Cursor, Gemini CLI, GitHub Copilot (VS Code), Aider** | open the repo in it. They all read `AGENTS.md` (the rules). Cursor / Gemini / Copilot also get the same `/setup`, `/process`, ... commands (shims in `.cursor/`, `.gemini/`, `.github/prompts/`). In Codex or Aider, just say "run setup", "run process", etc. |
+| **Only a chat website** (ChatGPT, Gemini, Claude.ai, ...) | `python harness.py prompt setup` builds one prompt with all the rules + your files, copies it to your clipboard. Paste it into the chat, save the reply to `reply.txt`, run `python harness.py apply reply.txt` (writes the files, builds the PDF). Works for `setup`, `process <slug>`, `dm`, `email`, `bank`. |
+| **No AI at all** | `python harness.py new tailor <slug>` (copies your resume + answer stubs + a tailoring checklist), `new email "Jane Doe"`, `new dm @handle` (templates with the rules inline), then `compile`, and send with `email-app/`. You do the writing; the harness keeps it organized and private. |
+
+Run `python harness.py` for all commands (stdlib Python, no installs).
+`python harness.py status` shows what you have and how many
+`[NEEDS INPUT]` gaps are left; `python harness.py check` confirms
+nothing personal is about to be committed.
 
 ## Getting your own copy
 
@@ -46,11 +53,11 @@ since git doesn't track them.
 
 ## Quickstart
 
-Prereqs: Claude Code (above), Python 3 (`python3` or `python`).
+Prereqs: an AI tool from the table above (or none), Python 3 (`python3` or `python`).
 Windows: Git for Windows (Git Bash).
 
-1. **Get your copy (above), `cd` in, run `claude`** from the repo root
-   (commands + hook only load there). Claude Code will ask permission
+1. **Get your copy (above), `cd` in, open your AI tool there** (e.g.
+   `claude`; commands only load from the repo root). It will ask permission
    the first time it writes files or runs the compile script — approve
    them (or pick "don't ask again" for this repo).
 2. **Install LaTeX + `latexmk`** (to build PDFs):
@@ -60,7 +67,8 @@ Windows: Git for Windows (Git Bash).
    - **Linux:** `sudo apt install texlive-latex-extra latexmk`
 
    No TeX? Everything still works; you just get `.tex` (open in Overleaf).
-3. **Run `/setup`.** Do this before anything else. Sections:
+3. **Run `/setup`** (chat website: `python harness.py prompt setup`).
+   Do this before anything else. Sections:
 
    | Section | What it asks for | Writes |
    |---|---|---|
@@ -128,7 +136,9 @@ yourself, `--send` asks you to type `send`. Steps in
 | `.claude/` | commands, compile hook, scripts | yes |
 | `email-app/` | optional sender | yes |
 | `template/` | context-bank / profile / voice templates + fictional worked example | yes |
-| `CLAUDE.md` | rules Claude follows | yes |
+| `AGENTS.md` | the rules every AI follows (`CLAUDE.md` just imports it) | yes |
+| `harness.py` | CLI for chat-website and no-AI use | yes |
+| `.cursor/` `.gemini/` `.github/prompts/` `.aider.conf.yml` | command shims for other tools (`python harness.py sync` regenerates) | yes |
 
 ## Privacy
 

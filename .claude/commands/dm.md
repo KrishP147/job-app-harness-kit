@@ -9,7 +9,7 @@ The user has pasted info about one or more people to DM, either as
 building, how the user knows of them, and (optionally) what the user
 wants. Do not fetch any URL or profile — paste-only.
 
-Follow CLAUDE.md #14 exactly. Steps:
+Follow AGENTS.md #14 exactly. Steps:
 
 1. Read every file under `context/` (incl. `profile.md` for closing
    line / links / style rules) and `resume/resume.tex`. These are the

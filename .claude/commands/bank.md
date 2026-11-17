@@ -4,7 +4,7 @@ argument-hint: "[what to add, e.g. 'new hackathon project' or paste notes / a fi
 allowed-tools: Read, Write, Edit, Glob
 ---
 
-Follow CLAUDE.md #3. The user wants to add something to
+Follow AGENTS.md #3. The user wants to add something to
 `context/bank.md` (create it from `template/context-bank.md` if
 missing). Input is `$ARGUMENTS`, the message body, or a file path.
 

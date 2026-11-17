@@ -35,7 +35,7 @@ For each distinct listing:
    line, verbatim — omit this section entirely if none survive>
    ```
 
-   **Question filter** (CLAUDE.md #4): keep only short-answer,
+   **Question filter** (AGENTS.md #4): keep only short-answer,
    application-specific questions — free-text prompts about the
    candidate, the role, or the company ("why us", "describe a time you…",
    "what interests you about…"). Drop everything else even though it was
