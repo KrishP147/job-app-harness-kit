@@ -19,13 +19,40 @@ enters git.
 > these. **Personalized setup = effective output.** Spend the time
 > once; add to it with `/bank` whenever you ship something new.
 
+## Do I need an LLM?
+
+Yes. The commands (`/setup`, `/process`, `/dm`, ...) are Claude Code
+slash commands, so you need [Claude Code](https://docs.claude.com/en/docs/claude-code)
+with a Claude subscription (Pro/Max) or an Anthropic API key. Claude
+does the interviewing, tailoring, and drafting. Two parts run without
+an LLM: the LaTeX compile scripts (`.claude/scripts/compile.*`,
+`watch.*`) and the email sender (`email-app/send.py`).
+
+## Getting your own copy
+
+Your data never gets committed: every personal folder is gitignored,
+so even a public fork would carry only the harness. Still, keep your
+copy **private** (it's easy to slip a file into the wrong place):
+
+- **On GitHub:** click **Use this template → Create a new repository →
+  Private**, then clone it. (Better than forking: forks of a public
+  repo can't be made private.)
+- **Local only:** `git clone <this repo>` and never push. Fine too —
+  your files only ever live on your machine.
+
+Pulling harness updates later: `git remote add upstream <this repo>`,
+then `git pull upstream main`. Your personal files are untouched
+since git doesn't track them.
+
 ## Quickstart
 
-Prereqs: [Claude Code](https://docs.claude.com/en/docs/claude-code),
-Python 3 (`python3` or `python`). Windows: Git for Windows (Git Bash).
+Prereqs: Claude Code (above), Python 3 (`python3` or `python`).
+Windows: Git for Windows (Git Bash).
 
-1. **Clone (private copy recommended), `cd` in, run `claude`** from the
-   repo root (commands + hook only load there).
+1. **Get your copy (above), `cd` in, run `claude`** from the repo root
+   (commands + hook only load there). Claude Code will ask permission
+   the first time it writes files or runs the compile script — approve
+   them (or pick "don't ask again" for this repo).
 2. **Install LaTeX + `latexmk`** (to build PDFs):
    - **Windows:** `winget install MiKTeX.MiKTeX` and
      `winget install StrawberryPerl.StrawberryPerl`
