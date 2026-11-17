@@ -1,0 +1,73 @@
+% ==== APPLICATION ANSWERS (comments only; not compiled) ====
+% Q1: Why do you want to work at Acme Robotics?
+% A1: [NEEDS INPUT: no material in resume/ or context/ speaks to motivation
+%     for this specific company — add a sentence or two about what draws
+%     you to Acme Robotics, or to robotics/order-fulfillment systems
+%     generally, and this can be filled in.]
+%
+% Q2: Describe a time you improved the reliability of a system you owned.
+% A2: At Northwind Systems, I designed a retry/backoff layer for our
+%     payment path after noticing failed-payment incidents were a
+%     recurring on-call burden. It cut failed-payment incidents by 60%
+%     over two quarters. I also rebuilt the order-processing pipeline in
+%     Go, bringing p95 latency down from 800ms to 120ms, which removed a
+%     common source of timeout-related failures downstream.
+%
+% Q3: What's your experience with Kubernetes?
+% A3: I migrated a monolithic Flask application at Fictional Data Co. into
+%     a set of containerized services deployed on Kubernetes, and I've
+%     operated Kubernetes-based services since, including in my current
+%     role at Northwind Systems.
+% ============================================================
+
+\documentclass[11pt]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\pagestyle{empty}
+
+\newcommand{\sectionhead}[1]{\vspace{8pt}\noindent{\bfseries\large #1}\vspace{2pt}\hrule\vspace{4pt}}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE Jordan Rivera} \\[2pt]
+  jordan.rivera@example.com \quad | \quad (555) 010-1234 \quad | \quad
+  \href{https://example.com/jordan}{example.com/jordan}
+\end{center}
+
+\sectionhead{Experience}
+
+\textbf{Backend Engineer} --- Northwind Systems \hfill 2022--Present \\
+\begin{itemize}[leftmargin=18pt, itemsep=2pt, topsep=2pt]
+  \item Designed a retry/backoff layer that reduced failed-payment
+    incidents by 60\% over two quarters.
+  \item Rebuilt the order-processing pipeline in Go, cutting p95 latency
+    from 800ms to 120ms.
+  \item Mentored two junior engineers through their first on-call
+    rotations.
+\end{itemize}
+
+\textbf{Software Engineer} --- Fictional Data Co. \hfill 2019--2022 \\
+\begin{itemize}[leftmargin=18pt, itemsep=2pt, topsep=2pt]
+  \item Migrated a monolithic Flask app to a set of containerized
+    services deployed on Kubernetes.
+  \item Built an internal ETL tool in Python that replaced a manual
+    weekly spreadsheet process, saving roughly 6 hours/week.
+\end{itemize}
+
+\sectionhead{Projects}
+
+\textbf{Open-source contribution: queuelib} \hfill 2023 \\
+Added a bounded-memory mode to a small open-source job queue library;
+merged upstream, now used in the project's default config.
+
+\sectionhead{Skills}
+
+Go, Python, PostgreSQL, Kubernetes, Kafka, Terraform.
+
+\sectionhead{Education}
+
+B.S. Computer Science --- State University \hfill 2019
+
+\end{document}

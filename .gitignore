@@ -1,0 +1,60 @@
+# ============================================================
+# PERSONAL DATA — never committed. Each folder keeps only its
+# README / .gitkeep placeholder. If you add a new personal folder,
+# add it here BEFORE putting anything in it.
+# ============================================================
+resume/*
+!resume/README.md
+
+context/*
+!context/README.md
+
+listings/*
+!listings/README.md
+!listings/completed
+listings/completed/*
+!listings/completed/.gitkeep
+
+output/*
+!output/.gitkeep
+
+dms/*
+!dms/README.md
+
+emails/*
+!emails/README.md
+
+# email app secrets + send log
+.env
+.env.*
+!.env.example
+email-app/sent.log
+
+# anything you mark private, anywhere
+*.private.*
+private/
+
+# loose personal files dropped at the root (interview notes, exports...)
+/*.md
+!/README.md
+!/CLAUDE.md
+/*.pdf
+/*.docx
+/*.txt
+
+# local Claude Code settings (may hold your paths / permissions)
+.claude/settings.local.json
+
+# --- latex build junk (repo-wide) ---
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# --- OS/editor/python noise ---
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc

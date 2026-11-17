@@ -1,0 +1,51 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\pagestyle{empty}
+
+\newcommand{\sectionhead}[1]{\vspace{8pt}\noindent{\bfseries\large #1}\vspace{2pt}\hrule\vspace{4pt}}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE Jordan Rivera} \\[2pt]
+  jordan.rivera@example.com \quad | \quad (555) 010-1234 \quad | \quad
+  \href{https://example.com/jordan}{example.com/jordan}
+\end{center}
+
+\sectionhead{Experience}
+
+\textbf{Backend Engineer} --- Northwind Systems \hfill 2022--Present \\
+\begin{itemize}[leftmargin=18pt, itemsep=2pt, topsep=2pt]
+  \item Rebuilt the order-processing pipeline in Go, cutting p95 latency
+    from 800ms to 120ms.
+  \item Designed a retry/backoff layer that reduced failed-payment
+    incidents by 60\% over two quarters.
+  \item Mentored two junior engineers through their first on-call
+    rotations.
+\end{itemize}
+
+\textbf{Software Engineer} --- Fictional Data Co. \hfill 2019--2022 \\
+\begin{itemize}[leftmargin=18pt, itemsep=2pt, topsep=2pt]
+  \item Built an internal ETL tool in Python that replaced a manual
+    weekly spreadsheet process, saving roughly 6 hours/week.
+  \item Migrated a monolithic Flask app to a set of containerized
+    services deployed on Kubernetes.
+\end{itemize}
+
+\sectionhead{Projects}
+
+\textbf{Open-source contribution: queuelib} \hfill 2023 \\
+Added a bounded-memory mode to a small open-source job queue library;
+merged upstream, now used in the project's default config.
+
+\sectionhead{Skills}
+
+Go, Python, PostgreSQL, Kubernetes, Kafka, Terraform.
+
+\sectionhead{Education}
+
+B.S. Computer Science --- State University \hfill 2019
+
+\end{document}
